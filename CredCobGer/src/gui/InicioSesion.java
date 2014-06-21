@@ -42,35 +42,35 @@ public class InicioSesion extends JFrame {
 		setResizable(false);
 		setTitle("CredCobGer - Iniciar Sesi\u00F3n");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 281, 205);
+		setBounds(100, 100, 281, 132);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(123, 107, 86, 20);
+		passwordField.setBounds(117, 36, 109, 20);
 		contentPane.add(passwordField);
 		
 		JLabel label = new JLabel("Contrase\u00F1a:");
-		label.setBounds(53, 110, 60, 14);
+		label.setBounds(47, 39, 60, 14);
 		contentPane.add(label);
 		
 		JLabel label_1 = new JLabel("Usuario:");
-		label_1.setBounds(67, 85, 46, 14);
+		label_1.setBounds(61, 14, 46, 14);
 		contentPane.add(label_1);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(123, 82, 86, 20);
+		textField.setBounds(117, 11, 109, 20);
 		contentPane.add(textField);
 		
 		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.setBounds(174, 138, 89, 23);
+		btnCancelar.setBounds(176, 67, 89, 23);
 		contentPane.add(btnCancelar);
 		
 		JButton btnAceptar = new JButton("Aceptar");
-		btnAceptar.setBounds(75, 138, 89, 23);
+		btnAceptar.setBounds(77, 67, 89, 23);
 		contentPane.add(btnAceptar);
 	}
 }
