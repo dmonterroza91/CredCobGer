@@ -10,9 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
-import java.awt.Toolkit;
 
-public class Guia extends JFrame {
+public class RecordCrediticio extends JFrame {
 
 	private JPanel contentPane;
 
@@ -23,7 +22,7 @@ public class Guia extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Guia frame = new Guia();
+					RecordCrediticio frame = new RecordCrediticio();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,31 +34,36 @@ public class Guia extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Guia() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Guia.class.getResource("/recursos/account_balances.png")));
+	public RecordCrediticio() {
 		setTitle("CredCobGer - [Nombre de Pantalla]");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 590, 427);
+		setBounds(100, 100, 781, 427);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JButton btnGuardarAArchivo = new JButton("Guardar...");
-		btnGuardarAArchivo.setIcon(new ImageIcon(Guia.class.getResource("/recursos/disk.png")));
+		btnGuardarAArchivo.setIcon(new ImageIcon(RecordCrediticio.class.getResource("/recursos/disk.png")));
 		btnGuardarAArchivo.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		btnGuardarAArchivo.setBounds(10, 11, 97, 23);
 		contentPane.add(btnGuardarAArchivo);
 		
 		JButton btnImprimir = new JButton("Imprimir");
-		btnImprimir.setIcon(new ImageIcon(Guia.class.getResource("/recursos/printer.png")));
+		btnImprimir.setIcon(new ImageIcon(RecordCrediticio.class.getResource("/recursos/printer.png")));
 		btnImprimir.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		btnImprimir.setBounds(117, 11, 95, 23);
 		contentPane.add(btnImprimir);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Guia.class.getResource("/recursos/aclogo_med_trans_64x67.png")));
-		lblNewLabel.setBounds(505, 11, 67, 67);
+		lblNewLabel.setIcon(new ImageIcon(RecordCrediticio.class.getResource("/recursos/aclogo_med_trans_64x67.png")));
+		lblNewLabel.setBounds(696, 11, 67, 67);
 		contentPane.add(lblNewLabel);
+		
+		JButton btnBuscar = new JButton("Buscar");
+		btnBuscar.setIcon(new ImageIcon(RecordCrediticio.class.getResource("/recursos/find.png")));
+		btnBuscar.setFont(new Font("Times New Roman", Font.PLAIN, 11));
+		btnBuscar.setBounds(222, 11, 95, 23);
+		contentPane.add(btnBuscar);
 	}
 }

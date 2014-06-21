@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.UIManager;
+import java.awt.Toolkit;
 
 public class InicioSesion extends JFrame {
 
@@ -39,6 +40,7 @@ public class InicioSesion extends JFrame {
 	 * Create the frame.
 	 */
 	public InicioSesion() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(InicioSesion.class.getResource("/recursos/key.png")));
 		setResizable(false);
 		setTitle("CredCobGer - Iniciar Sesi\u00F3n");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

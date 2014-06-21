@@ -6,12 +6,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollPane;
+
 import java.awt.Font;
 
 public class BuscarAsociado extends JFrame {
@@ -47,7 +49,7 @@ public class BuscarAsociado extends JFrame {
 	public BuscarAsociado() {
 		setTitle("Buscar Asociado...");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 660, 384);
+		setBounds(100, 100, 660, 320);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -113,29 +115,29 @@ public class BuscarAsociado extends JFrame {
 		lblApellidos.setBounds(270, 42, 46, 14);
 		contentPane.add(lblApellidos);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Buscar");
 		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		btnNewButton.setBounds(553, 113, 89, 23);
 		contentPane.add(btnNewButton);
 		
-		JButton button = new JButton("New button");
-		button.setFont(new Font("Times New Roman", Font.PLAIN, 11));
-		button.setBounds(454, 115, 89, 23);
-		contentPane.add(button);
+		JButton btnBorrarCasillas = new JButton("Borrar Campos");
+		btnBorrarCasillas.setFont(new Font("Times New Roman", Font.PLAIN, 11));
+		btnBorrarCasillas.setBounds(440, 113, 103, 23);
+		contentPane.add(btnBorrarCasillas);
 		
-		JButton button_1 = new JButton("New button");
-		button_1.setFont(new Font("Times New Roman", Font.PLAIN, 11));
-		button_1.setBounds(553, 316, 89, 23);
-		contentPane.add(button_1);
+		JButton btnSeleccionar = new JButton("Seleccionar");
+		btnSeleccionar.setFont(new Font("Times New Roman", Font.PLAIN, 11));
+		btnSeleccionar.setBounds(553, 255, 89, 23);
+		contentPane.add(btnSeleccionar);
 		
-		JButton button_2 = new JButton("New button");
-		button_2.setFont(new Font("Times New Roman", Font.PLAIN, 11));
-		button_2.setBounds(454, 316, 89, 23);
-		contentPane.add(button_2);
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Times New Roman", Font.PLAIN, 11));
+		btnCancelar.setBounds(454, 255, 89, 23);
+		contentPane.add(btnCancelar);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setFont(new Font("Times New Roman", Font.PLAIN, 11));
-		scrollPane.setBounds(10, 141, 632, 164);
+		scrollPane.setBounds(10, 141, 632, 103);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -164,5 +166,10 @@ public class BuscarAsociado extends JFrame {
 		table.getColumnModel().getColumn(3).setPreferredWidth(99);
 		table.getColumnModel().getColumn(4).setPreferredWidth(145);
 		scrollPane.setViewportView(table);
+		
+		JLabel label_img = new JLabel("");
+		label_img.setIcon(new ImageIcon(Guia.class.getResource("/recursos/aclogo_med_trans_64x67.png")));
+		label_img.setBounds(575, 11, 67, 67);
+		contentPane.add(label_img);
 	}
 }
