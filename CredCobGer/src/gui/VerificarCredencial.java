@@ -13,15 +13,12 @@ import javax.swing.JButton;
 import javax.swing.UIManager;
 import java.awt.Toolkit;
 import java.awt.Font;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
-public class InicioSesion extends JFrame {
+public class VerificarCredencial extends JFrame {
 
 	private JPanel contentPane;
 	private JPasswordField passwordField;
-	private JTextField textField;
-	JFrame iS = this;
+
 	/**
 	 * Launch the application.
 	 */
@@ -30,8 +27,7 @@ public class InicioSesion extends JFrame {
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-					InicioSesion frame = new InicioSesion();
-					frame.setLocationRelativeTo(null);
+					VerificarCredencial frame = new VerificarCredencial();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,12 +39,12 @@ public class InicioSesion extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public InicioSesion() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(InicioSesion.class.getResource("/recursos/key.png")));
+	public VerificarCredencial() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(VerificarCredencial.class.getResource("/recursos/key.png")));
 		setResizable(false);
-		setTitle("CredCobGer - Iniciar Sesi\u00F3n");
+		setTitle("CredCobGer - Verificar Usuario");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 281, 132);
+		setBounds(100, 100, 296, 132);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -69,28 +65,19 @@ public class InicioSesion extends JFrame {
 		label_1.setBounds(61, 14, 46, 14);
 		contentPane.add(label_1);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Times New Roman", Font.PLAIN, 12));
-		textField.setColumns(10);
-		textField.setBounds(117, 11, 109, 20);
-		contentPane.add(textField);
-		
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setFont(new Font("Times New Roman", Font.PLAIN, 12));
-		btnCancelar.setBounds(176, 67, 89, 23);
+		btnCancelar.setBounds(191, 66, 89, 23);
 		contentPane.add(btnCancelar);
 		
 		JButton btnAceptar = new JButton("Aceptar");
-		btnAceptar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				iS.dispose();
-				Prin principal = new Prin();
-				principal.setLocationRelativeTo(null);
-				principal.setVisible(true);
-			}
-		});
 		btnAceptar.setFont(new Font("Times New Roman", Font.PLAIN, 12));
-		btnAceptar.setBounds(77, 67, 89, 23);
+		btnAceptar.setBounds(92, 66, 89, 23);
 		contentPane.add(btnAceptar);
+		
+		JLabel lblXxxxxxxxxxxxxxxxx = new JLabel("Xxxxxxxxxxxxxxxxx");
+		lblXxxxxxxxxxxxxxxxx.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		lblXxxxxxxxxxxxxxxxx.setBounds(117, 14, 109, 14);
+		contentPane.add(lblXxxxxxxxxxxxxxxxx);
 	}
 }

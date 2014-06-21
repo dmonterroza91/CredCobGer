@@ -17,6 +17,7 @@ import javax.swing.SwingConstants;
 public class Prin extends JFrame {
 
 	private JPanel contentPane;
+	JFrame prin = this;
 
 	/**
 	 * Launch the application.
@@ -27,6 +28,7 @@ public class Prin extends JFrame {
 				try {
 					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 					Prin frame = new Prin();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,6 +41,7 @@ public class Prin extends JFrame {
 	 * Create the frame.
 	 */
 	public Prin() {
+		
 		setTitle("CredCobGer - Sistema de Informaci\u00F3n Gerencial");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 536, 388);
