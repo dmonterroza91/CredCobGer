@@ -7,9 +7,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class Prin extends JFrame {
 
@@ -98,5 +101,20 @@ public class Prin extends JFrame {
 		
 		JMenuItem mntmPrstamosOtorgadosVs = new JMenuItem("Pr\u00E9stamos Otorgados vs. Mora");
 		mnGestin.add(mntmPrstamosOtorgadosVs);
+		
+		JMenu mnAdministracin = new JMenu("Administraci\u00F3n");
+		menuBar.add(mnAdministracin);
+		
+		JMenuItem mntmUsuarios = new JMenuItem("Usuarios");
+		mnAdministracin.add(mntmUsuarios);
+		
+		JMenuItem mntmRefrescarBaseDe = new JMenuItem("Refrescar Base de Datos");
+		mnAdministracin.add(mntmRefrescarBaseDe);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(80, 32, 369, 311);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setIcon(new ImageIcon(Prin.class.getResource("/recursos/aclogo_med_trans_369x387.png")));
+		contentPane.add(lblNewLabel);
 	}
 }
