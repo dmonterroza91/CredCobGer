@@ -48,7 +48,7 @@ public class Prin extends JFrame {
 		menuBar.setBounds(0, 0, 528, 21);
 		contentPane.add(menuBar);
 		
-		JMenu mnArchivo = new JMenu("Archivo");
+		JMenu mnArchivo = new JMenu("[nombreUsuario]");
 		menuBar.add(mnArchivo);
 		
 		JMenuItem mntmGestinDeCuenta = new JMenuItem("Gesti\u00F3n de Cuenta");
@@ -60,28 +60,43 @@ public class Prin extends JFrame {
 		JMenu mnGestin = new JMenu("Informes");
 		menuBar.add(mnGestin);
 		
-		JMenuItem mntmRecordCrediticio = new JMenuItem("Record Crediticio");
-		mnGestin.add(mntmRecordCrediticio);
-		
-		JMenuItem mntmCarteraAsegurable = new JMenuItem("Cartera Asegurable");
-		mnGestin.add(mntmCarteraAsegurable);
+		JMenuItem mntmAbonosACrditos = new JMenuItem("Abonos a Cr\u00E9ditos");
+		mnGestin.add(mntmAbonosACrditos);
 		
 		JMenuItem mntmCrditosPorSucursal = new JMenuItem("Cr\u00E9ditos por Sucursal");
 		mnGestin.add(mntmCrditosPorSucursal);
 		
-		JMenuItem mntmAbonosACrditos = new JMenuItem("Abonos a Cr\u00E9ditos");
-		mnGestin.add(mntmAbonosACrditos);
+		JMenu mnCandidatosARefinanciamiento = new JMenu("Candidatos a Refinanciamiento");
+		mnGestin.add(mnCandidatosARefinanciamiento);
 		
-		JMenuItem mntmCandidatosARefinanciamiento = new JMenuItem("Candidatos a Refinanciamiento");
-		mnGestin.add(mntmCandidatosARefinanciamiento);
+		JMenuItem mntmBuenAsociado = new JMenuItem("Buen Asociado");
+		mnCandidatosARefinanciamiento.add(mntmBuenAsociado);
 		
-		JMenuItem menuItem_5 = new JMenuItem("New menu item");
-		mnGestin.add(menuItem_5);
+		JMenuItem mntmProblemasEnMora = new JMenuItem("Problemas en Mora");
+		mnCandidatosARefinanciamiento.add(mntmProblemasEnMora);
 		
-		JMenuItem menuItem_6 = new JMenuItem("New menu item");
-		mnGestin.add(menuItem_6);
+		JMenuItem mntmCarteraAsegurable = new JMenuItem("Cartera Asegurable");
+		mnGestin.add(mntmCarteraAsegurable);
 		
-		JMenuItem menuItem_7 = new JMenuItem("New menu item");
-		mnGestin.add(menuItem_7);
+		JMenuItem mntmRecordCrediticio = new JMenuItem("Record Crediticio");
+		mnGestin.add(mntmRecordCrediticio);
+		
+		JMenu mnSeguimientoAlPlan = new JMenu("Seguimiento al Plan Empresarial");
+		mnGestin.add(mnSeguimientoAlPlan);
+		
+		JMenuItem mntmMetaMensual = new JMenuItem("Meta Mensual");
+		mnSeguimientoAlPlan.add(mntmMetaMensual);
+		
+		JMenuItem mntmProyeccinAnual = new JMenuItem("Proyecci\u00F3n Anual");
+		mnSeguimientoAlPlan.add(mntmProyeccinAnual);
+		
+		JMenuItem mntmCrditosDirectivosY = new JMenuItem("Cr\u00E9ditos Directivos y Empleados");
+		mnGestin.add(mntmCrditosDirectivosY);
+		
+		JMenuItem mntmCrditosOtorgados = new JMenuItem("Cr\u00E9ditos Otorgados");
+		mnGestin.add(mntmCrditosOtorgados);
+		
+		JMenuItem mntmPrstamosOtorgadosVs = new JMenuItem("Pr\u00E9stamos Otorgados vs. Mora");
+		mnGestin.add(mntmPrstamosOtorgadosVs);
 	}
 }
