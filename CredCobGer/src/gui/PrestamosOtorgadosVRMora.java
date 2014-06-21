@@ -41,7 +41,7 @@ public class PrestamosOtorgadosVRMora extends JFrame {
 	 */
 	public PrestamosOtorgadosVRMora() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 614, 354);
+		setBounds(100, 100, 591, 351);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -76,12 +76,12 @@ public class PrestamosOtorgadosVRMora extends JFrame {
 		contentPane.add(btnImprimir);
 		
 		JLabel lblSucursal = new JLabel("Sucursal");
-		lblSucursal.setBounds(20, 45, 46, 14);
+		lblSucursal.setBounds(10, 45, 46, 14);
 		contentPane.add(lblSucursal);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Seleccione una...", "San Salvador", "Salvador del Mundo"}));
-		comboBox.setBounds(76, 39, 102, 20);
+		comboBox.setBounds(109, 42, 102, 20);
 		contentPane.add(comboBox);
 		
 		JLabel lblLineaDeCrdito = new JLabel("Linea de Cr\u00E9dito");
@@ -89,7 +89,8 @@ public class PrestamosOtorgadosVRMora extends JFrame {
 		contentPane.add(lblLineaDeCrdito);
 		
 		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(110, 67, 68, 20);
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Rotativo", "Personal", "Sin Fiador", "Hipotecario", "Navide\u00F1o", "Mercader\u00EDa", "Sin Fiador", "Sobre Aportaciones", "Microcr\u00E9dito"}));
+		comboBox_1.setBounds(110, 67, 101, 20);
 		contentPane.add(comboBox_1);
 		
 		JLabel lblDesde = new JLabel("Desde:");
@@ -97,15 +98,15 @@ public class PrestamosOtorgadosVRMora extends JFrame {
 		contentPane.add(lblDesde);
 		
 		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(274, 39, 87, 20);
+		dateChooser.setBounds(291, 39, 87, 20);
 		contentPane.add(dateChooser);
 		
 		JLabel lblHasta = new JLabel("Hasta:");
-		lblHasta.setBounds(371, 45, 46, 14);
+		lblHasta.setBounds(386, 45, 46, 14);
 		contentPane.add(lblHasta);
 		
 		JDateChooser dateChooser_1 = new JDateChooser();
-		dateChooser_1.setBounds(410, 39, 87, 20);
+		dateChooser_1.setBounds(442, 39, 87, 20);
 		contentPane.add(dateChooser_1);
 		
 		JLabel lblCondicion = new JLabel("Condicion");
