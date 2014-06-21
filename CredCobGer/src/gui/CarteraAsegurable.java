@@ -9,11 +9,16 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import javax.swing.UIManager;
+
 import java.awt.Font;
 import java.awt.Toolkit;
+
 import javax.swing.JSeparator;
 import javax.swing.JScrollPane;
+
 import java.awt.FlowLayout;
+
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JCheckBox;
@@ -29,7 +34,7 @@ public class CarteraAsegurable extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
+				try {UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 					CarteraAsegurable frame = new CarteraAsegurable();
 					frame.setVisible(true);
 				} catch (Exception e) {

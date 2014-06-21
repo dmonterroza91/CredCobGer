@@ -13,8 +13,12 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.UIManager;
+
 import com.toedter.calendar.JDateChooser;
+
 import javax.swing.ImageIcon;
+
 import java.awt.Font;
 import java.awt.Toolkit;
 
@@ -30,6 +34,7 @@ public class PrestamosOtorgadosVRMora extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 					PrestamosOtorgadosVRMora frame = new PrestamosOtorgadosVRMora();
 					frame.setVisible(true);
 				} catch (Exception e) {

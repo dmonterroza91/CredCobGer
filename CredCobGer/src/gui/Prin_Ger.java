@@ -13,6 +13,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import java.awt.Toolkit;
 
 public class Prin_Ger extends JFrame {
 
@@ -41,6 +42,7 @@ public class Prin_Ger extends JFrame {
 	 * Create the frame.
 	 */
 	public Prin_Ger() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Prin_Ger.class.getResource("/recursos/account_balances.png")));
 		
 		setTitle("CredCobGer - Sistema de Informaci\u00F3n Gerencial");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

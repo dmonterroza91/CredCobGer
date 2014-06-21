@@ -9,13 +9,17 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import javax.swing.UIManager;
+
 import java.awt.Font;
 import java.awt.Toolkit;
+
 import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.SwingConstants;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -40,6 +44,7 @@ public class RecordCrediticio extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 					RecordCrediticio frame = new RecordCrediticio();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -168,7 +173,7 @@ public class RecordCrediticio extends JFrame {
 		
 		JLabel lblAos = new JLabel("99 A\u00F1os");
 		lblAos.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lblAos.setBounds(102, 184, 82, 14);
+		lblAos.setBounds(153, 184, 82, 14);
 		panel_1.add(lblAos);
 		
 		JLabel lblAntigedad = new JLabel("Antig\u00FCedad");

@@ -9,15 +9,21 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import javax.swing.UIManager;
+
 import java.awt.Font;
 import java.awt.Toolkit;
+
 import javax.swing.JSeparator;
 import javax.swing.JScrollPane;
+
 import java.awt.FlowLayout;
+
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+
 import com.toedter.calendar.JDateChooser;
 
 public class CreditosSucursal extends JFrame {
@@ -32,6 +38,7 @@ public class CreditosSucursal extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 					CreditosSucursal frame = new CreditosSucursal();
 					frame.setVisible(true);
 				} catch (Exception e) {
