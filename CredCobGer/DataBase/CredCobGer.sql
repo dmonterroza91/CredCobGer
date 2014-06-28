@@ -6,7 +6,7 @@ CREATE TABLE ahorro (
   FEC_ULT_MOV_AHO date NOT NULL default '0000-00-00',
   FEC_APE_AHO date NOT NULL default '0000-00-00',
   PRIMARY KEY  (COD_AHO,CODIGO_AS)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE aportacion (
   CODIGO_AS varchar(7) NOT NULL default '',
@@ -15,7 +15,7 @@ CREATE TABLE aportacion (
   FEC_APE_APO date NOT NULL default '0000-00-00',
   ULT_PAG_APO date NOT NULL default '0000-00-00',
   PRIMARY KEY  (CODIGO_APO,CODIGO_AS)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE asociado (
   CODIGO_AS varchar(7) NOT NULL default '',
@@ -34,7 +34,7 @@ CREATE TABLE asociado (
   PAGO_PRE_FIN decimal(10,2) default NULL,
   RAZ_ENDEU decimal(10,2) default NULL,
   PRIMARY KEY  (CODIGO_AS)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE bitacora_usu (
   COR_BIT_USU int(11) NOT NULL default '0',
@@ -42,7 +42,7 @@ CREATE TABLE bitacora_usu (
   FEC_BIT_USU date NOT NULL default '0000-00-00',
   EVE_BIT_USU varchar(30) NOT NULL default '',
   PRIMARY KEY  (COR_BIT_USU)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE credito (
   COD_CRE varchar(11) NOT NULL default '',
@@ -61,7 +61,7 @@ CREATE TABLE credito (
   PAG_OTROS_CRE decimal(10,2) NOT NULL default '0.00',
   FEC_ACT_CRE date NOT NULL default '0000-00-00',
   PRIMARY KEY  (COD_CRE,CODIGO_AS)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE deposito_plazo (
   CODIGO_AS varchar(7) NOT NULL default '',
@@ -72,26 +72,26 @@ CREATE TABLE deposito_plazo (
   VENC_DEP date NOT NULL default '0000-00-00',
   ULT_PAGO_DEP date NOT NULL default '0000-00-00',
   PRIMARY KEY  (CODIGO_DEP,CODIGO_AS)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE direccion (
   CODIGO_AS varchar(7) NOT NULL default '',
   NUM_COR_DIR int(11) NOT NULL default '0',
   DIRE_DIR varchar(50) NOT NULL default '',
   PRIMARY KEY  (CODIGO_AS,NUM_COR_DIR)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE linea_credito (
   NUM_LIN_CRED int(11) NOT NULL default '0',
   NOM_LIN_CRED varchar(20) NOT NULL default '',
   PRIMARY KEY  (NUM_LIN_CRED)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE otorga (
   NUM_LIN_CRED int(11) NOT NULL default '0',
   NUM_CORR_SUC int(11) NOT NULL default '0',
   PRIMARY KEY  (NUM_LIN_CRED,NUM_CORR_SUC)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE proy_anual (
   ANHO int(11) NOT NULL default '0',
@@ -99,7 +99,7 @@ CREATE TABLE proy_anual (
   REALIZADO decimal(10,2) NOT NULL default '0.00',
   META decimal(10,2) NOT NULL default '0.00',
   PRIMARY KEY  (ANHO,CODIGO_RUBRO)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE proy_mens (
   MES_PM int(11) NOT NULL default '0',
@@ -108,32 +108,32 @@ CREATE TABLE proy_mens (
   REALIZADO_PM decimal(10,2) NOT NULL default '0.00',
   META_PM decimal(10,2) NOT NULL default '0.00',
   PRIMARY KEY  (MES_PM,CODIGO_RUBRO)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE rubro_proyeccion (
   CODIGO_RUBRO char(2) NOT NULL default '',
   NOMBRE varchar(20) NOT NULL default '',
   PRIMARY KEY  (CODIGO_RUBRO)
-) TYPE=MyISAM;
+) TYPE=InnoDB;
  
 CREATE TABLE sucursal (
   NUM_CORR_SUC int(11) NOT NULL default '0',
   NOMBRE_SUC varchar(20) NOT NULL default '',
   PRIMARY KEY  (NUM_CORR_SUC)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE telefono (
   CODIGO_AS varchar(7) NOT NULL default '',
   NUM_COR int(11) NOT NULL default '0',
   NUM_TEL varchar(8) NOT NULL default '',
   PRIMARY KEY  (CODIGO_AS,NUM_COR)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE tipo_usuario (
   COD_USU int(11) NOT NULL default '0',
   TIP_USU varchar(10) NOT NULL default '',
   PRIMARY KEY  (COD_USU)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 CREATE TABLE usuario (
   NOM_USU varchar(16) NOT NULL default '',
@@ -142,7 +142,7 @@ CREATE TABLE usuario (
   PAS_USU varchar(16) NOT NULL default '',
   ULT_ACC_USU date NOT NULL default '0000-00-00',
   PRIMARY KEY  (NOM_USU)
-) TYPE=MyISAM; 
+) TYPE=InnoDB; 
 
 
 alter table AHORRO add constraint FK_AHORRA_EN foreign key (CODIGO_AS)
