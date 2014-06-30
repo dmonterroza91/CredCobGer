@@ -1,4 +1,4 @@
-package gui;
+package PRESENTAR;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -47,7 +47,7 @@ public class ComparativoProyeccionAnual extends JFrame {
 	 */
 	public ComparativoProyeccionAnual() {
 	
-	setIconImage(Toolkit.getDefaultToolkit().getImage(Guia.class.getResource("/recursos/account_balances.png")));
+	setIconImage(Toolkit.getDefaultToolkit().getImage(ComparativoProyeccionAnual.class.getResource("/recursos/account_balances.png")));
 	setTitle("CredCobGer - [Proyección Anual]");
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	setBounds(100, 100, 590, 427);
@@ -99,13 +99,13 @@ public class ComparativoProyeccionAnual extends JFrame {
 	scrollPane.setViewportView(table);
 	
 	JButton btnGuardarAArchivo = new JButton("Guardar...");
-	btnGuardarAArchivo.setIcon(new ImageIcon(Guia.class.getResource("/recursos/disk.png")));
+	btnGuardarAArchivo.setIcon(new ImageIcon(ComparativoProyeccionAnual.class.getResource("/recursos/disk.png")));
 	btnGuardarAArchivo.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 	btnGuardarAArchivo.setBounds(10, 11, 97, 23);
 	contentPane.add(btnGuardarAArchivo);
 	
 	JButton btnImprimir = new JButton("Imprimir");
-	btnImprimir.setIcon(new ImageIcon(Guia.class.getResource("/recursos/printer.png")));
+	btnImprimir.setIcon(new ImageIcon(ComparativoProyeccionAnual.class.getResource("/recursos/printer.png")));
 	btnImprimir.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 	btnImprimir.setBounds(117, 11, 95, 23);
 	contentPane.add(btnImprimir);

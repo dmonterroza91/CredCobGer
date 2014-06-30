@@ -44,7 +44,7 @@ public class CreditosOtorgados extends JFrame {
 	 */
 	public CreditosOtorgados() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Guia.class.getResource("/recursos/account_balances.png")));
-		setTitle("Créditos Otorgados Bruto y Neto - [Nombre de Pantalla]");
+		setTitle("CredCobGer - [Créditos Otorgados Bruto y Neto]");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 590, 427);
 		contentPane = new JPanel();
@@ -113,10 +113,11 @@ public class CreditosOtorgados extends JFrame {
 		btnImprimir.setBounds(117, 11, 95, 23);
 		contentPane.add(btnImprimir);
 		
-		JButton butFiltrar = new JButton("Filtrar");
-		butFiltrar.setFont(new Font("Times New Roman", Font.PLAIN, 11));
-		butFiltrar.setBounds(389, 63, 95, 23);
-		contentPane.add(butFiltrar);
+		JButton btnFiltrar = new JButton("Filtrar");
+		btnFiltrar.setIcon(new ImageIcon(CreditosSucursal.class.getResource("/recursos/filter.png")));
+		btnFiltrar.setFont(new Font("Times New Roman", Font.PLAIN, 11));
+		btnFiltrar.setBounds(389, 63, 95, 23);
+		contentPane.add(btnFiltrar);
 		
 	
 	}
