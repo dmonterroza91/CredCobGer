@@ -14,6 +14,6 @@
 	<classpathentry exported="true" kind="lib" path="hibernate/jboss-logging-3.1.0.GA.jar"/>
 	<classpathentry exported="true" kind="lib" path="hibernate/jboss-transaction-api_1.1_spec-1.0.1.Final.jar"/>
 	<classpathentry exported="true" kind="lib" path="mysql-connector-java-3.1.14-bin.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Documents and Settings/Uso/Escritorio/itext/itextpdf-5.5.1.jar"/>
+	<classpathentry kind="lib" path="itextpdf-5.5.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
