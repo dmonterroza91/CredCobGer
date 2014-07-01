@@ -1,26 +1,28 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.JPasswordField;
-import javax.swing.JButton;
-import javax.swing.UIManager;
-import java.awt.Toolkit;
 import java.awt.Font;
-import java.awt.event.ActionListener;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+
+import PRESENTAR.Prin_Ger;
 
 public class InicioSesion extends JFrame {
 
 	private JPanel contentPane;
 	private JPasswordField passwordField;
 	private JTextField textField;
+	private DialogoError error;
 	JFrame iS = this;
 	/**
 	 * Launch the application.
@@ -83,10 +85,16 @@ public class InicioSesion extends JFrame {
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(passwordField.getPassword().equals("putaputa")){
 				iS.dispose();
-				Prin principal = new Prin();
+				Prin_Ger principal = new Prin_Ger();
 				principal.setLocationRelativeTo(null);
-				principal.setVisible(true);
+				principal.setVisible(true);}
+				else{
+					String err = "Usuario o Contraseña Incorrecto(s)";
+					error = new DialogoError(err, iS);
+					error.setLocationRelativeTo(null);
+				}
 			}
 		});
 		btnAceptar.setFont(new Font("Times New Roman", Font.PLAIN, 12));
