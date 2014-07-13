@@ -62,7 +62,7 @@ public class DetalleProyeccionAnual extends JFrame {
 		contentPane.add(lblDesde);
 		
 		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(66, 45, 87, 20);
+		dateChooser.setBounds(50, 45, 103, 20);
 		contentPane.add(dateChooser);
 			
 		table = new JTable();
@@ -104,6 +104,11 @@ public class DetalleProyeccionAnual extends JFrame {
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(283, 45, 194, 23);
 		contentPane.add(textPane);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(DetalleProyeccionAnual.class.getResource("/recursos/aclogo_med_trans_64x67.png")));
+		label.setBounds(505, 0, 67, 67);
+		contentPane.add(label);
 	
 	}
 }

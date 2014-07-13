@@ -57,23 +57,23 @@ public class ComparativoProyeccionAnual extends JFrame {
 	contentPane.setLayout(null);
 	
 	JScrollPane scrollPane = new JScrollPane();
-	scrollPane.setBounds(10, 97, 549, 185);
+	scrollPane.setBounds(10, 93, 562, 185);
 	contentPane.add(scrollPane);
 	
 	JLabel lblDesde = new JLabel("Desde:");
-	lblDesde.setBounds(10, 51, 46, 14);
+	lblDesde.setBounds(105, 51, 46, 14);
 	contentPane.add(lblDesde);
 	
 	JDateChooser dateChooser = new JDateChooser();
-	dateChooser.setBounds(66, 45, 87, 20);
+	dateChooser.setBounds(150, 45, 97, 20);
 	contentPane.add(dateChooser);
 	
 	JLabel lblHasta = new JLabel("Hasta:");
-	lblHasta.setBounds(161, 51, 46, 14);
+	lblHasta.setBounds(257, 51, 46, 14);
 	contentPane.add(lblHasta);
 	
 	JDateChooser dateChooser_1 = new JDateChooser();
-	dateChooser_1.setBounds(217, 45, 87, 20);
+	dateChooser_1.setBounds(296, 45, 97, 20);
 	contentPane.add(dateChooser_1);
 			
 	table = new JTable();
@@ -114,5 +114,16 @@ public class ComparativoProyeccionAnual extends JFrame {
 	Detalle.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 	Detalle.setBounds(223, 11, 95, 23);
 	contentPane.add(Detalle);
+	
+	JButton button = new JButton("Filtrar");
+	button.setIcon(new ImageIcon(ComparativoProyeccionAnual.class.getResource("/recursos/filter.png")));
+	button.setFont(new Font("Times New Roman", Font.PLAIN, 11));
+	button.setBounds(403, 45, 95, 23);
+	contentPane.add(button);
+	
+	JLabel label = new JLabel("");
+	label.setIcon(new ImageIcon(ComparativoProyeccionAnual.class.getResource("/recursos/aclogo_med_trans_64x67.png")));
+	label.setBounds(505, 0, 67, 67);
+	contentPane.add(label);
 }
 }

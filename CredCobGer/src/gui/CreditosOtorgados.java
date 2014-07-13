@@ -116,8 +116,13 @@ public class CreditosOtorgados extends JFrame {
 		JButton btnFiltrar = new JButton("Filtrar");
 		btnFiltrar.setIcon(new ImageIcon(CreditosSucursal.class.getResource("/recursos/filter.png")));
 		btnFiltrar.setFont(new Font("Times New Roman", Font.PLAIN, 11));
-		btnFiltrar.setBounds(389, 63, 95, 23);
+		btnFiltrar.setBounds(400, 45, 95, 23);
 		contentPane.add(btnFiltrar);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(CreditosOtorgados.class.getResource("/recursos/aclogo_med_trans_64x67.png")));
+		label.setBounds(505, -2, 67, 67);
+		contentPane.add(label);
 		
 	
 	}
