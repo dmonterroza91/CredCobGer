@@ -44,7 +44,7 @@ public class Rubros extends JFrame {
 	public Rubros() {
 			
 	setIconImage(Toolkit.getDefaultToolkit().getImage(Guia.class.getResource("/recursos/account_balances.png")));
-	setTitle("Rubros - [Nombre de Pantalla]");
+	setTitle("CredCobGer - Rubros");
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	setBounds(100, 100, 590, 427);
 	contentPane = new JPanel();
