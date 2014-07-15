@@ -45,7 +45,7 @@ public class OpcionesMora extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(OpcionesMora.class.getResource("/recursos/toolbox.png")));
 		setResizable(false);
 		setTitle("D\u00EDas Mora");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 225, 164);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

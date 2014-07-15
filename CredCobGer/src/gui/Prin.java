@@ -13,12 +13,39 @@ import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Prin extends JFrame {
 
 	private JPanel contentPane;
 	JFrame prin = this;
-
+	
+	JMenuBar menuBar = new JMenuBar();
+	JMenu mnArchivo = new JMenu("[nombreUsuario]");
+	JMenu mnGestin = new JMenu("Informes");	
+	JMenu mnAdministracin = new JMenu("Administraci\u00F3n");
+	
+	JMenuItem mntmGestinDeCuenta = new JMenuItem("Gesti\u00F3n de Cuenta");	
+	JMenuItem mntmCerrarSesin = new JMenuItem("Cerrar Sesi\u00F3n");
+	
+	JMenuItem mntmAbonosACrditos = new JMenuItem("Abonos a Cr\u00E9ditos");	
+	JMenuItem mntmCrditosPorSucursal = new JMenuItem("Cr\u00E9ditos por Sucursal");	
+	JMenu mnCandidatosARefinanciamiento = new JMenu("Candidatos a Refinanciamiento");	
+	JMenuItem mntmBuenAsociado = new JMenuItem("Buen Asociado");	
+	JMenuItem mntmProblemasEnMora = new JMenuItem("Problemas en Mora");	
+	JMenuItem mntmCarteraAsegurable = new JMenuItem("Cartera Asegurable");	
+	JMenuItem mntmRecordCrediticio = new JMenuItem("Record Crediticio");
+	
+	JMenu mnSeguimientoAlPlan = new JMenu("Seguimiento al Plan Empresarial");	
+	JMenuItem mntmMetaMensual = new JMenuItem("Meta Mensual");
+	JMenuItem mntmProyeccinAnual = new JMenuItem("Proyecci\u00F3n Anual");	
+	JMenuItem mntmCrditosDirectivosY = new JMenuItem("Cr\u00E9ditos Directivos y Empleados");	
+	JMenuItem mntmCrditosOtorgados = new JMenuItem("Cr\u00E9ditos Otorgados");	
+	JMenuItem mntmPrstamosOtorgadosVs = new JMenuItem("Pr\u00E9stamos Otorgados vs. Mora");	
+		
+	JMenuItem mntmUsuarios = new JMenuItem("Usuarios");
+	JMenuItem mntmRefrescarBaseDe = new JMenuItem("Refrescar Base de Datos");
 	/**
 	 * Launch the application.
 	 */
@@ -43,75 +70,124 @@ public class Prin extends JFrame {
 	public Prin() {
 		
 		setTitle("CredCobGer - Sistema de Informaci\u00F3n Gerencial");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 536, 388);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JMenuBar menuBar = new JMenuBar();
+		
 		menuBar.setBounds(0, 0, 528, 21);
 		contentPane.add(menuBar);
 		
-		JMenu mnArchivo = new JMenu("[nombreUsuario]");
+		
 		menuBar.add(mnArchivo);
-		
-		JMenuItem mntmGestinDeCuenta = new JMenuItem("Gesti\u00F3n de Cuenta");
 		mnArchivo.add(mntmGestinDeCuenta);
-		
-		JMenuItem mntmCerrarSesin = new JMenuItem("Cerrar Sesi\u00F3n");
+		mntmCerrarSesin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InicioSesion ini = new InicioSesion();
+				ini.setLocationRelativeTo(null);
+				ini.setVisible(true);
+				prin.dispose();
+			}
+		});
 		mnArchivo.add(mntmCerrarSesin);
-		
-		JMenu mnGestin = new JMenu("Informes");
 		menuBar.add(mnGestin);
-		
-		JMenuItem mntmAbonosACrditos = new JMenuItem("Abonos a Cr\u00E9ditos");
+		mntmAbonosACrditos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				AbonosCredito vent = new AbonosCredito();
+				vent.setLocationRelativeTo(null);
+				vent.setVisible(true);
+			}
+		});
 		mnGestin.add(mntmAbonosACrditos);
-		
-		JMenuItem mntmCrditosPorSucursal = new JMenuItem("Cr\u00E9ditos por Sucursal");
+		mntmCrditosPorSucursal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				CreditosSucursal vent = new CreditosSucursal();
+				vent.setLocationRelativeTo(null);
+				vent.setVisible(true);
+			}
+		});
 		mnGestin.add(mntmCrditosPorSucursal);
 		
-		JMenu mnCandidatosARefinanciamiento = new JMenu("Candidatos a Refinanciamiento");
 		mnGestin.add(mnCandidatosARefinanciamiento);
-		
-		JMenuItem mntmBuenAsociado = new JMenuItem("Buen Asociado");
+		mntmBuenAsociado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				RefinBuenAsoc vent = new RefinBuenAsoc();
+				vent.setLocationRelativeTo(null);
+				vent.setVisible(true);
+			}
+		});
 		mnCandidatosARefinanciamiento.add(mntmBuenAsociado);
-		
-		JMenuItem mntmProblemasEnMora = new JMenuItem("Problemas en Mora");
+		mntmProblemasEnMora.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				RefinMora vent = new RefinMora();
+				vent.setLocationRelativeTo(null);
+				vent.setVisible(true);
+			}
+		});
 		mnCandidatosARefinanciamiento.add(mntmProblemasEnMora);
-		
-		JMenuItem mntmCarteraAsegurable = new JMenuItem("Cartera Asegurable");
+		mntmCarteraAsegurable.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				CarteraAsegurable vent = new CarteraAsegurable();
+				vent.setLocationRelativeTo(null);
+				vent.setVisible(true);
+			}
+		});
 		mnGestin.add(mntmCarteraAsegurable);
-		
-		JMenuItem mntmRecordCrediticio = new JMenuItem("Record Crediticio");
+		mntmRecordCrediticio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				RecordCrediticio vent = new RecordCrediticio();
+				vent.setLocationRelativeTo(null);
+				vent.setVisible(true);
+			}
+		});
 		mnGestin.add(mntmRecordCrediticio);
-		
-		JMenu mnSeguimientoAlPlan = new JMenu("Seguimiento al Plan Empresarial");
 		mnGestin.add(mnSeguimientoAlPlan);
-		
-		JMenuItem mntmMetaMensual = new JMenuItem("Meta Mensual");
+		mntmMetaMensual.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				SeguimientoAlPlanEmplesarialMensual vent = new SeguimientoAlPlanEmplesarialMensual();
+				vent.setLocationRelativeTo(null);
+				vent.setVisible(true);
+			}
+		});
 		mnSeguimientoAlPlan.add(mntmMetaMensual);
-		
-		JMenuItem mntmProyeccinAnual = new JMenuItem("Proyecci\u00F3n Anual");
+		mntmProyeccinAnual.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DetalleProyeccionAnual vent = new DetalleProyeccionAnual();
+				vent.setLocationRelativeTo(null);
+				vent.setVisible(true);
+			}
+		});
 		mnSeguimientoAlPlan.add(mntmProyeccinAnual);
-		
-		JMenuItem mntmCrditosDirectivosY = new JMenuItem("Cr\u00E9ditos Directivos y Empleados");
+		mntmCrditosDirectivosY.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PrestamosDirectivosEmpleados vent = new PrestamosDirectivosEmpleados();
+				vent.setLocationRelativeTo(null);
+				vent.setVisible(true);
+			}
+		});
 		mnGestin.add(mntmCrditosDirectivosY);
-		
-		JMenuItem mntmCrditosOtorgados = new JMenuItem("Cr\u00E9ditos Otorgados");
+		mnSeguimientoAlPlan.add(mntmProyeccinAnual);
+		mntmCrditosOtorgados.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				CreditosOtorgados vent = new CreditosOtorgados();
+				vent.setLocationRelativeTo(null);
+				vent.setVisible(true);
+			}
+		});
 		mnGestin.add(mntmCrditosOtorgados);
-		
-		JMenuItem mntmPrstamosOtorgadosVs = new JMenuItem("Pr\u00E9stamos Otorgados vs. Mora");
+		mntmPrstamosOtorgadosVs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PrestamosOtorgadosVRMora vent = new PrestamosOtorgadosVRMora();
+				vent.setLocationRelativeTo(null);
+				vent.setVisible(true);
+			}
+		});
 		mnGestin.add(mntmPrstamosOtorgadosVs);
-		
-		JMenu mnAdministracin = new JMenu("Administraci\u00F3n");
 		menuBar.add(mnAdministracin);
-		
-		JMenuItem mntmUsuarios = new JMenuItem("Usuarios");
 		mnAdministracin.add(mntmUsuarios);
-		
-		JMenuItem mntmRefrescarBaseDe = new JMenuItem("Refrescar Base de Datos");
 		mnAdministracin.add(mntmRefrescarBaseDe);
 		
 		JLabel lblNewLabel = new JLabel("");

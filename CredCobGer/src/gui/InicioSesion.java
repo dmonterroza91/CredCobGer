@@ -15,6 +15,8 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
+import com.sun.xml.internal.ws.Closeable;
+
 import PRESENTAR.Prin_Ger;
 
 public class InicioSesion extends JFrame {
@@ -78,6 +80,11 @@ public class InicioSesion extends JFrame {
 		contentPane.add(textField);
 		
 		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		btnCancelar.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		btnCancelar.setBounds(176, 67, 89, 23);
 		contentPane.add(btnCancelar);
@@ -85,11 +92,31 @@ public class InicioSesion extends JFrame {
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(passwordField.getPassword().equals("putaputa")){
-				iS.dispose();
-				Prin_Ger principal = new Prin_Ger();
+				Prin principal = new Prin();
 				principal.setLocationRelativeTo(null);
+				if(textField.getText().equals("admin")){
+					principal.mntmAbonosACrditos.setVisible(false);
+					principal.mntmCrditosPorSucursal.setVisible(false);
+					principal.mnCandidatosARefinanciamiento.setVisible(false);
+					principal.mntmBuenAsociado.setVisible(false);
+					principal.mntmProblemasEnMora.setVisible(false);
+					principal.mntmCarteraAsegurable.setVisible(false);
+					principal.mntmRecordCrediticio.setVisible(false);
+					principal.mnArchivo.setText("Admin");
+				iS.dispose();
 				principal.setVisible(true);}
+				else if(textField.getText().equals("CredCob")){
+					principal.mnSeguimientoAlPlan.setVisible(false);
+					principal.mntmMetaMensual.setVisible(false);
+					principal.mntmProyeccinAnual.setVisible(false);
+					principal.mntmCrditosDirectivosY.setVisible(false);
+					principal.mntmCrditosOtorgados.setVisible(false);
+					principal.mntmPrstamosOtorgadosVs.setVisible(false);
+					principal.mnAdministracin.setVisible(false);
+					principal.mnArchivo.setText("CredCob");	
+					iS.dispose();
+					principal.setVisible(true);				
+				}
 				else{
 					String err = "Usuario o Contraseña Incorrecto(s)";
 					error = new DialogoError(err, iS);

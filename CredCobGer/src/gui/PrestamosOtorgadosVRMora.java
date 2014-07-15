@@ -50,7 +50,7 @@ public class PrestamosOtorgadosVRMora extends JFrame {
 	public PrestamosOtorgadosVRMora() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(PrestamosOtorgadosVRMora.class.getResource("/recursos/account_balances.png")));
 		setTitle("CredCobGer - Prestamos Otorgados VS Mora");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 613, 351);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

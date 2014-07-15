@@ -43,7 +43,7 @@ public class VerificarCredencial extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VerificarCredencial.class.getResource("/recursos/key.png")));
 		setResizable(false);
 		setTitle("CredCobGer - Verificar Usuario");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 296, 132);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

@@ -55,9 +55,9 @@ public class AbonosCredito extends JFrame {
 	 * Create the frame.
 	 */
 	public AbonosCredito() {
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(AbonosCredito.class.getResource("/recursos/account_balances.png")));
 		setTitle("CredCobGer - Abonos de Cr\u00E8ditos");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 832, 427);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

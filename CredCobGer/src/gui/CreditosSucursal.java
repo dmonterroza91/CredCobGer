@@ -54,7 +54,7 @@ public class CreditosSucursal extends JFrame {
 	public CreditosSucursal() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(CreditosSucursal.class.getResource("/recursos/account_balances.png")));
 		setTitle("CredCobGer - Cr\u00E9ditos por Sucursal");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 740, 441);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

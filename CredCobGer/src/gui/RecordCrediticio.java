@@ -60,7 +60,7 @@ public class RecordCrediticio extends JFrame {
 	public RecordCrediticio() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(RecordCrediticio.class.getResource("/recursos/account_balances.png")));
 		setTitle("CredCobGer - Record Crediticio de Asociado");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 781, 427);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

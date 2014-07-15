@@ -49,7 +49,7 @@ public class RefinMora extends JFrame {
 	public RefinMora() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(RefinBuenAsoc.class.getResource("/recursos/account_balances.png")));
 		setTitle("CredCobGer - Listado de Refinanciamiento por Mora");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 859, 427);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

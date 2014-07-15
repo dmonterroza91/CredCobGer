@@ -46,7 +46,7 @@ public class DetalleProyeccionAnual extends JFrame {
 	public DetalleProyeccionAnual() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Guia.class.getResource("/recursos/account_balances.png")));
 		setTitle("CredCobGer - [Detalle de Proyección Anual]");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 590, 427);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

@@ -48,7 +48,7 @@ public class RefinBuenAsoc extends JFrame {
 	public RefinBuenAsoc() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(RefinBuenAsoc.class.getResource("/recursos/account_balances.png")));
 		setTitle("CredCobGer - Listado de Candidatos a REfinanciamiento por Buen Asociado");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 854, 427);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

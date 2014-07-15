@@ -50,7 +50,7 @@ public class PrestamosDirectivosEmpleados extends JFrame {
 	public PrestamosDirectivosEmpleados() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(PrestamosDirectivosEmpleados.class.getResource("/recursos/account_balances.png")));
 		setTitle("CredCobGer - Prestamos de Directivos y Empleados");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 620, 364);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
