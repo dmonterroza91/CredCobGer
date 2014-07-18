@@ -17,6 +17,8 @@ import javax.swing.JScrollPane;
 
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class BuscarAsociado extends JFrame {
 
@@ -130,6 +132,13 @@ public class BuscarAsociado extends JFrame {
 		contentPane.add(btnBorrarCasillas);
 		
 		JButton btnSeleccionar = new JButton("Seleccionar");
+		btnSeleccionar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				RecordCrediticio rec = new RecordCrediticio();
+				rec.setLocationRelativeTo(null);
+				rec.setVisible(true);
+			}
+		});
 		btnSeleccionar.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		btnSeleccionar.setBounds(553, 255, 89, 23);
 		contentPane.add(btnSeleccionar);

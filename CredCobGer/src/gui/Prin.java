@@ -138,7 +138,7 @@ public class Prin extends JFrame {
 		mnGestin.add(mntmCarteraAsegurable);
 		mntmRecordCrediticio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				RecordCrediticio vent = new RecordCrediticio();
+				BuscarAsociado vent = new BuscarAsociado();
 				vent.setLocationRelativeTo(null);
 				vent.setVisible(true);
 			}

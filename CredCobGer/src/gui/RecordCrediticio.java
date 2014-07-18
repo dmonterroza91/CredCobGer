@@ -90,9 +90,9 @@ public class RecordCrediticio extends JFrame {
 		btnBuscar.setBounds(222, 11, 95, 23);
 		contentPane.add(btnBuscar);
 		
-		JLabel lblNewLabel_1 = new JLabel("9999999, Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+		JLabel lblNewLabel_1 = new JLabel("9999999, Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lblNewLabel_1.setBounds(10, 65, 676, 29);
+		lblNewLabel_1.setBounds(10, 65, 515, 29);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblDui = new JLabel("DUI: 99999999-9   NIT: 9999-999999-999-9   Fecha de Nacimiento: 99/99/9999");
@@ -313,5 +313,12 @@ public class RecordCrediticio extends JFrame {
 		btnAnterior.setBounds(264, 359, 97, 23);
 		btnAnterior.setVisible(false);
 		contentPane.add(btnAnterior);
+		
+		JLabel label_1 = new JLabel("Clasificaci\u00F3n: XX");
+		label_1.setHorizontalTextPosition(SwingConstants.CENTER);
+		label_1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_1.setFont(new Font("Times New Roman", Font.BOLD, 24));
+		label_1.setBounds(535, 73, 220, 46);
+		contentPane.add(label_1);
 	}
 }

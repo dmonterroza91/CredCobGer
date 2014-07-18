@@ -25,6 +25,9 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 
 import com.toedter.calendar.JDateChooser;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JToggleButton;
 
 public class CreditosSucursal extends JFrame {
 
@@ -40,6 +43,7 @@ public class CreditosSucursal extends JFrame {
 				try {
 					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 					CreditosSucursal frame = new CreditosSucursal();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -79,6 +83,13 @@ public class CreditosSucursal extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JButton btnOpciones = new JButton("Opciones");
+		btnOpciones.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				OpcionesMora opc = new OpcionesMora();
+				opc.setLocationRelativeTo(null);
+				opc.setVisible(true);
+			}
+		});
 		btnOpciones.setIcon(new ImageIcon(CreditosSucursal.class.getResource("/recursos/toolbox.png")));
 		btnOpciones.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		btnOpciones.setBounds(222, 11, 95, 23);
@@ -176,6 +187,9 @@ public class CreditosSucursal extends JFrame {
 		contentPane.add(lblSucursal);
 		
 		JComboBox comboBox = new JComboBox();
+		comboBox.addItem("Todas...");
+		comboBox.addItem("Sede San Salvador");
+		comboBox.addItem("Salvador del Mundo");
 		comboBox.setBounds(65, 41, 147, 20);
 		contentPane.add(comboBox);
 		
