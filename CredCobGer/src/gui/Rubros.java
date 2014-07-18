@@ -106,14 +106,7 @@ public class Rubros extends JFrame {
 			rub.dispose();
 		}
 	});
-	/*
-	btnVerResumen.addMouseListener(new MouseAdapter() {
-		@Override
-		public void mouseClicked(MouseEvent arg0) {
-			ComparativoProyeccionAnual cmpA= new ComparativoProyeccionAnual();
-		}
-	});
-	*/
+	
 	btnVerResumen.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 	btnVerResumen.setBounds(223, 11, 95, 23);
 	contentPane.add(btnVerResumen);

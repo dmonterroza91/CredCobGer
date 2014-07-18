@@ -121,15 +121,7 @@ public class ComparativoProyeccionAnual extends JFrame {
 			compA.dispose();
 		}
 	});
-	/*
-	Detalle.addMouseListener(new MouseAdapter() {
-	//	@Override
-		DetalleProyeccionAnual dtA = new DetalleProyeccionAnual();
-		public void mouseClicked(MouseEvent e) {
-			//DetalleProyeccionAnual dtA = new DetalleProyeccionAnual();
-		}
-	});
-	*/
+	
 	Detalle.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 	Detalle.setBounds(223, 11, 95, 23);
 	contentPane.add(Detalle);
