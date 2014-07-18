@@ -44,7 +44,7 @@ public class CreditosOtorgados extends JFrame {
 	 */
 	public CreditosOtorgados() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Guia.class.getResource("/recursos/account_balances.png")));
-		setTitle("CredCobGer - [Créditos Otorgados Bruto y Neto]");
+		setTitle("CredCobGer - Créditos Otorgados Bruto y Neto");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 590, 427);
 		contentPane = new JPanel();
@@ -55,14 +55,6 @@ public class CreditosOtorgados extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 97, 549, 185);
 		contentPane.add(scrollPane);
-		
-		JLabel lblDesde = new JLabel("Fecha:");
-		lblDesde.setBounds(10, 51, 46, 14);
-		contentPane.add(lblDesde);
-		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(66, 45, 87, 20);
-		contentPane.add(dateChooser);
 			
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
@@ -124,7 +116,22 @@ public class CreditosOtorgados extends JFrame {
 		label.setBounds(505, -2, 67, 67);
 		contentPane.add(label);
 		
+		JLabel label_1 = new JLabel("Desde:");
+		label_1.setBounds(102, 57, 46, 14);
+		contentPane.add(label_1);
+		
+		JDateChooser dateChooser_1 = new JDateChooser();
+		dateChooser_1.setBounds(147, 51, 97, 20);
+		contentPane.add(dateChooser_1);
+		
+		JLabel label_2 = new JLabel("Hasta:");
+		label_2.setBounds(254, 57, 46, 14);
+		contentPane.add(label_2);
+		
+		JDateChooser dateChooser_2 = new JDateChooser();
+		dateChooser_2.setBounds(293, 51, 97, 20);
+		contentPane.add(dateChooser_2);
+		
 	
 	}
-
 }

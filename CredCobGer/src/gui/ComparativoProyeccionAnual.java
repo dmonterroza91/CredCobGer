@@ -51,7 +51,7 @@ public class ComparativoProyeccionAnual extends JFrame {
 	public ComparativoProyeccionAnual() {
 	
 	setIconImage(Toolkit.getDefaultToolkit().getImage(Guia.class.getResource("/recursos/account_balances.png")));
-	setTitle("CredCobGer - [Proyección Anual]");
+	setTitle("CredCobGer - Proyección Anual");
 	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	setBounds(100, 100, 590, 427);
 	contentPane = new JPanel();
