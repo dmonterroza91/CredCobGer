@@ -20,11 +20,14 @@ import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JDateChooser;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ComparativoProyeccionAnual extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
+	JFrame compA = this;
 
 	/**
 	 * Launch the application.
@@ -111,6 +114,22 @@ public class ComparativoProyeccionAnual extends JFrame {
 	contentPane.add(btnImprimir);
 	
 	JButton Detalle = new JButton("Detalle");
+	Detalle.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			DetalleProyeccionAnual dtA = new DetalleProyeccionAnual();
+			dtA.setVisible(true);
+			compA.dispose();
+		}
+	});
+	/*
+	Detalle.addMouseListener(new MouseAdapter() {
+	//	@Override
+		DetalleProyeccionAnual dtA = new DetalleProyeccionAnual();
+		public void mouseClicked(MouseEvent e) {
+			//DetalleProyeccionAnual dtA = new DetalleProyeccionAnual();
+		}
+	});
+	*/
 	Detalle.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 	Detalle.setBounds(223, 11, 95, 23);
 	contentPane.add(Detalle);

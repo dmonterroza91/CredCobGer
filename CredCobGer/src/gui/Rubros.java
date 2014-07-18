@@ -16,11 +16,16 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JDateChooser;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Rubros extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
+	JFrame rub = this;
 
 	/**
 	 * Launch the application.
@@ -94,9 +99,28 @@ public class Rubros extends JFrame {
 	contentPane.add(btnModificar);
 	
 	JButton btnVerResumen = new JButton("Ver Resumen");
+	btnVerResumen.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			ComparativoProyeccionAnual cmpA= new ComparativoProyeccionAnual();
+			cmpA.setVisible(true);
+			rub.dispose();
+		}
+	});
+	/*
+	btnVerResumen.addMouseListener(new MouseAdapter() {
+		@Override
+		public void mouseClicked(MouseEvent arg0) {
+			ComparativoProyeccionAnual cmpA= new ComparativoProyeccionAnual();
+		}
+	});
+	*/
 	btnVerResumen.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 	btnVerResumen.setBounds(223, 11, 95, 23);
 	contentPane.add(btnVerResumen);
+	
+	JLabel label = new JLabel("");
+	label.setIcon(new ImageIcon(Rubros.class.getResource("/recursos/aclogo_med_trans_64x67.png")));
+	label.setBounds(505, 0, 67, 67);
+	contentPane.add(label);
 }
-
 }

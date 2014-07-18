@@ -155,7 +155,8 @@ public class Prin extends JFrame {
 		mnSeguimientoAlPlan.add(mntmMetaMensual);
 		mntmProyeccinAnual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				DetalleProyeccionAnual vent = new DetalleProyeccionAnual();
+			//	DetalleProyeccionAnual vent = new DetalleProyeccionAnual();
+				Rubros vent = new Rubros();
 				vent.setLocationRelativeTo(null);
 				vent.setVisible(true);
 			}
