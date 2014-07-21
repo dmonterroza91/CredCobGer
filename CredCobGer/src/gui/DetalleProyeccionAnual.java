@@ -18,6 +18,8 @@ import javax.swing.table.DefaultTableModel;
 import com.toedter.calendar.JDateChooser;
 
 import javax.swing.JTextPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class DetalleProyeccionAnual extends JFrame {
 
@@ -109,6 +111,20 @@ public class DetalleProyeccionAnual extends JFrame {
 		label.setIcon(new ImageIcon(DetalleProyeccionAnual.class.getResource("/recursos/aclogo_med_trans_64x67.png")));
 		label.setBounds(505, 0, 67, 67);
 		contentPane.add(label);
+		
+		JButton button = new JButton("Regresar");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ComparativoProyeccionAnual cmpA = new ComparativoProyeccionAnual ();
+				cmpA.setVisible(true);
+				DetalleProyeccionAnual dtProyA = new DetalleProyeccionAnual();
+			//	dtProyA.setVisible(false);
+				dtProyA.dispose();
+			}
+		});
+		button.setIcon(new ImageIcon(DetalleProyeccionAnual.class.getResource("/recursos/arrow_left.png")));
+		button.setBounds(24, 359, 141, 23);
+		contentPane.add(button);
 	
 	}
 }

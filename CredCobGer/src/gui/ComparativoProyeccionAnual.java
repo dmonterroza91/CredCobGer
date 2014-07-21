@@ -136,5 +136,20 @@ public class ComparativoProyeccionAnual extends JFrame {
 	label.setIcon(new ImageIcon(ComparativoProyeccionAnual.class.getResource("/recursos/aclogo_med_trans_64x67.png")));
 	label.setBounds(505, 0, 67, 67);
 	contentPane.add(label);
+	
+	JButton button_1 = new JButton("Regresar");
+	button_1.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			Rubros rub = new Rubros ();
+			rub.setVisible(true);
+			ComparativoProyeccionAnual cmProyA = new ComparativoProyeccionAnual();
+			//cmProyA.setVisible(false);
+			cmProyA.dispose();
+			
+		}
+	});
+	button_1.setIcon(new ImageIcon(ComparativoProyeccionAnual.class.getResource("/recursos/arrow_left.png")));
+	button_1.setBounds(23, 348, 141, 23);
+	contentPane.add(button_1);
 }
 }
