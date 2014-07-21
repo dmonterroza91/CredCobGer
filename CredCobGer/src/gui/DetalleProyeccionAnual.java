@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class DetalleProyeccionAnual extends JFrame {
-
+	DetalleProyeccionAnual dpa = this;
 	private JPanel contentPane;
 	private JTable table;
 
@@ -117,9 +117,10 @@ public class DetalleProyeccionAnual extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				ComparativoProyeccionAnual cmpA = new ComparativoProyeccionAnual ();
 				cmpA.setVisible(true);
-				DetalleProyeccionAnual dtProyA = new DetalleProyeccionAnual();
+				cmpA.setLocationRelativeTo(null);
+				//DetalleProyeccionAnual dtProyA = new DetalleProyeccionAnual();
 			//	dtProyA.setVisible(false);
-				dtProyA.dispose();
+				dpa.dispose();
 			}
 		});
 		button.setIcon(new ImageIcon(DetalleProyeccionAnual.class.getResource("/recursos/arrow_left.png")));

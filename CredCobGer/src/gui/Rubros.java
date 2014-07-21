@@ -103,6 +103,7 @@ public class Rubros extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			ComparativoProyeccionAnual cmpA= new ComparativoProyeccionAnual();
 			cmpA.setVisible(true);
+			cmpA.setLocationRelativeTo(null);
 			rub.dispose();
 		}
 	});

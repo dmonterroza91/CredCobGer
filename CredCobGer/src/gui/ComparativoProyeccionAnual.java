@@ -118,6 +118,7 @@ public class ComparativoProyeccionAnual extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			DetalleProyeccionAnual dtA = new DetalleProyeccionAnual();
 			dtA.setVisible(true);
+			dtA.setLocationRelativeTo(null);
 			compA.dispose();
 		}
 	});
@@ -142,9 +143,10 @@ public class ComparativoProyeccionAnual extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			Rubros rub = new Rubros ();
 			rub.setVisible(true);
-			ComparativoProyeccionAnual cmProyA = new ComparativoProyeccionAnual();
+			rub.setLocationRelativeTo(null);
+			//ComparativoProyeccionAnual cmProyA = new ComparativoProyeccionAnual();
 			//cmProyA.setVisible(false);
-			cmProyA.dispose();
+			compA.dispose();
 			
 		}
 	});
