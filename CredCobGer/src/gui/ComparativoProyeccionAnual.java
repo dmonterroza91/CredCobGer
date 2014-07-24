@@ -96,7 +96,7 @@ public class ComparativoProyeccionAnual extends JFrame {
 			{null, null, null, null, null, null, null, null, null},
 		},
 		new String[] {
-			"Rubro", "Realizado al 31/12/2008", "Realizado al 31/12/2009", "Realizado al 31/12/2010", "Realizado al 31/12/2011", "Realizado al 31/12/2012", "Realizado al 31/12/2013", "Logro %", "Crecimiento a Diciembre 2013"
+			"RUBRO", "REALIZADO AL 31/12/2008", "REALIZADO AL 31/12/2009", "REALIZADO AL 31/12/2010", "REALIZADO AL 31/12/2011", "REALIZADO AL 31/12/2012", "REALIZADO AL 31/12/2013", "LOGRO %", "CRECIMIENTO A DICIEMBRE 2013"
 		}
 	));
 	scrollPane.setViewportView(table);

@@ -71,7 +71,7 @@ public class CreditosOtorgados extends JFrame {
 				{null, null, null, null, null},
 			},
 			new String[] {
-				"Meses", "Proyectado", "Realizado", "Cumplimiento", "Crecimiento"
+				"MESES", "PROYECTADO", "REALIZADO", "CUMPLIMIENTO", "CRECIMIENTO"
 			}
 		));
 		scrollPane.setViewportView(table);

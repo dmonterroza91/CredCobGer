@@ -81,7 +81,7 @@ public class Rubros extends JFrame {
 			{null, null},
 		},
 		new String[] {
-			"Rubro", "$"
+			"RUBRO", "PROYECTADO ($)"
 		}
 	));
 	scrollPane.setViewportView(table);
