@@ -23,6 +23,8 @@ import javax.swing.JTextField;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
@@ -36,7 +38,33 @@ public class AbonosCredito extends JFrame {
 	private JPanel contentPane;
 	private JTable table_1;
 	private JTable table;
-
+	DefaultTableModel modeloTabla = new DefaultTableModel(
+			new Object[][] {
+					{null, null, null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null, null, null},
+					{null, null, null, null, null, null, null, null, null, null, null},
+				},
+				new String[] {
+					"<html>Código<br>Asociado", "N\u00BA Cr\u00E9dito", "Nombre Completo", "Capital ($)", "Intereses ($)", "Seguro ($)", "Manejo ($)", "Seg. Da\u00F1os ($)", "Int. Moratorio ($)", "Int. Pendiente ($)", "Total Abonado ($)"
+				}
+			) {
+				boolean[] columnEditables = new boolean[] {
+					false, false, true, false, false, false, false, false, false, false, false
+				};
+				public boolean isCellEditable(int row, int column) {
+					return columnEditables[column];
+				}
+			};
+	JComboBox comboBox = new JComboBox();
+	JComboBox comboBox_1 = new JComboBox();
+	
 	/**
 	 * Launch the application.
 	 */
@@ -61,7 +89,7 @@ public class AbonosCredito extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(AbonosCredito.class.getResource("/recursos/account_balances.png")));
 		setTitle("CredCobGer - Abonos de Cr\u00E8ditos");
-		setBounds(100, 100, 1030, 321);
+		setBounds(100, 100, 1030, 460);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -103,59 +131,48 @@ public class AbonosCredito extends JFrame {
 		lblNewLabel_1.setBounds(547, 64, 39, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setEnabled(false);
-		scrollPane.setBounds(20, 89, 985, 184);
-		contentPane.add(scrollPane);
 		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null, null, null},
-			},
-			new String[] {
-				"C\u00F3d. Asoc.", "N\u00BA Cr\u00E9dito", "Nombre Completo", "Capital ($)", "Intereses ($)", "Seguro ($)", "Manejo ($)", "Seg. Da\u00F1os ($)", "Int. Moratorio ($)", "Int. Pendiente ($)", "Total Abonado ($)"
-			}
-		) {
-			boolean[] columnEditables = new boolean[] {
-				false, false, true, false, false, false, false, false, false, false, false
-			};
-			public boolean isCellEditable(int row, int column) {
-				return columnEditables[column];
-			}
-		});
-		table.getColumnModel().getColumn(0).setPreferredWidth(67);
-		table.getColumnModel().getColumn(1).setResizable(false);
-		table.getColumnModel().getColumn(1).setPreferredWidth(63);
-		table.getColumnModel().getColumn(2).setResizable(false);
-		table.getColumnModel().getColumn(2).setPreferredWidth(200);
-		table.getColumnModel().getColumn(3).setResizable(false);
-		table.getColumnModel().getColumn(3).setPreferredWidth(64);
-		table.getColumnModel().getColumn(4).setResizable(false);
-		table.getColumnModel().getColumn(4).setPreferredWidth(76);
-		table.getColumnModel().getColumn(5).setResizable(false);
-		table.getColumnModel().getColumn(5).setPreferredWidth(64);
-		table.getColumnModel().getColumn(6).setResizable(false);
-		table.getColumnModel().getColumn(6).setPreferredWidth(66);
-		table.getColumnModel().getColumn(7).setPreferredWidth(85);
-		table.getColumnModel().getColumn(8).setResizable(false);
-		table.getColumnModel().getColumn(8).setPreferredWidth(99);
-		table.getColumnModel().getColumn(9).setResizable(false);
-		table.getColumnModel().getColumn(9).setPreferredWidth(102);
-		table.getColumnModel().getColumn(10).setResizable(false);
-		table.getColumnModel().getColumn(10).setPreferredWidth(100);
-		scrollPane.setViewportView(table);
+//		JScrollPane scrollPane = new JScrollPane();
+//		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+//		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+//		scrollPane.setEnabled(false);
+//		scrollPane.setBounds(20, 89, 985, 321);
+//		contentPane.add(scrollPane);
+//		
+//		table = new JTable();
+//		table.setRowHeight(20);
+//		table.setModel(modeloTabla);
+//		table.getColumnModel().getColumn(0).setPreferredWidth(67);
+//		table.getColumnModel().getColumn(1).setResizable(false);
+//		table.getColumnModel().getColumn(1).setPreferredWidth(63);
+//		table.getColumnModel().getColumn(2).setResizable(false);
+//		table.getColumnModel().getColumn(2).setPreferredWidth(200);
+//		table.getColumnModel().getColumn(3).setResizable(false);
+//		table.getColumnModel().getColumn(3).setPreferredWidth(64);
+//		table.getColumnModel().getColumn(4).setResizable(false);
+//		table.getColumnModel().getColumn(4).setPreferredWidth(76);
+//		table.getColumnModel().getColumn(5).setResizable(false);
+//		table.getColumnModel().getColumn(5).setPreferredWidth(64);
+//		table.getColumnModel().getColumn(6).setResizable(false);
+//		table.getColumnModel().getColumn(6).setPreferredWidth(66);
+//		table.getColumnModel().getColumn(7).setPreferredWidth(85);
+//		table.getColumnModel().getColumn(8).setResizable(false);
+//		table.getColumnModel().getColumn(8).setPreferredWidth(99);
+//		table.getColumnModel().getColumn(9).setResizable(false);
+//		table.getColumnModel().getColumn(9).setPreferredWidth(102);
+//		table.getColumnModel().getColumn(10).setResizable(false);
+//		table.getColumnModel().getColumn(10).setPreferredWidth(100);
+//		scrollPane.setViewportView(table);
+		
+		
+		
+		
+		String[] nombres = {"<html>CODIGO<br>ASOCIADO",  "<html>NUM.<br>CREDITO", "NOMBRE COMPLETO", "<html>CAPITAL<br>($)", "<html>INTERESES<br>($)", "<html>SEGURO<br>($)", "<html>MANEJO<br>($)", "<html>SEGURO<br>DAÑOS ($)", "<html>INT.<br>MORAT. ($)", "<html>INT.<br>PENDIENTE ($)", "<html>TOTAL<br>ABONADO ($)"};
+		int[] anch = {67,64,200,64,76,64,66,85,99,102,100};
+		Tabla tabla = new Tabla(20, 3, nombres, anch);
+		tabla.setEnabled(false);
+		tabla.setBounds(20, 89, 985, 321);
+		contentPane.add(tabla);
 		
 		JLabel lblFechaFin = new JLabel("Hasta:");
 		lblFechaFin.setFont(new Font("Times New Roman", Font.PLAIN, 12));
@@ -166,7 +183,7 @@ public class AbonosCredito extends JFrame {
 		dateChooser_1.setBounds(732, 61, 87, 20);
 		contentPane.add(dateChooser_1);
 		
-		JComboBox comboBox = new JComboBox();
+		
 		comboBox.setBounds(65, 61, 170, 20);
 		comboBox.addItem("Todo");
 		comboBox.addItem("Cede San Salvador");
@@ -178,7 +195,6 @@ public class AbonosCredito extends JFrame {
 		lblLineaDeCrdito.setBounds(245, 64, 87, 14);
 		contentPane.add(lblLineaDeCrdito);
 		
-		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setBounds(342, 61, 195, 20);
 		comboBox_1.addItem("Todas");
 		comboBox_1.addItem("Préstamo Rotativo");
@@ -201,6 +217,14 @@ public class AbonosCredito extends JFrame {
 		button.setBounds(829, 60, 95, 23);
 		contentPane.add(button);
 		
-		
+		comboBox.addItemListener(new ItemListener() {
+			
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(comboBox.getSelectedIndex()==0){
+					modeloTabla.addColumn("Sucursal");
+				}
+			}
+		});
 	}
 }
