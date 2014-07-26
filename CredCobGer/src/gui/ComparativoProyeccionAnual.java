@@ -22,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 import com.toedter.calendar.JDateChooser;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JScrollBar;
 
 public class ComparativoProyeccionAnual extends JFrame {
 
@@ -53,30 +54,30 @@ public class ComparativoProyeccionAnual extends JFrame {
 	setIconImage(Toolkit.getDefaultToolkit().getImage(Guia.class.getResource("/recursos/account_balances.png")));
 	setTitle("CredCobGer - Proyección Anual");
 	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-	setBounds(100, 100, 590, 427);
+	setBounds(100, 100, 789, 437);
 	contentPane = new JPanel();
 	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 	setContentPane(contentPane);
 	contentPane.setLayout(null);
 	
 	JScrollPane scrollPane = new JScrollPane();
-	scrollPane.setBounds(10, 93, 562, 185);
+	scrollPane.setBounds(10, 93, 761, 189);
 	contentPane.add(scrollPane);
 	
 	JLabel lblDesde = new JLabel("Desde:");
-	lblDesde.setBounds(105, 51, 46, 14);
+	lblDesde.setBounds(296, 51, 46, 14);
 	contentPane.add(lblDesde);
 	
 	JDateChooser dateChooser = new JDateChooser();
-	dateChooser.setBounds(150, 45, 97, 20);
+	dateChooser.setBounds(339, 45, 109, 20);
 	contentPane.add(dateChooser);
 	
 	JLabel lblHasta = new JLabel("Hasta:");
-	lblHasta.setBounds(257, 51, 46, 14);
+	lblHasta.setBounds(458, 51, 46, 14);
 	contentPane.add(lblHasta);
 	
 	JDateChooser dateChooser_1 = new JDateChooser();
-	dateChooser_1.setBounds(296, 45, 97, 20);
+	dateChooser_1.setBounds(495, 45, 103, 20);
 	contentPane.add(dateChooser_1);
 			
 	table = new JTable();
@@ -96,9 +97,16 @@ public class ComparativoProyeccionAnual extends JFrame {
 			{null, null, null, null, null, null, null, null, null},
 		},
 		new String[] {
-			"RUBRO", "REALIZADO AL 31/12/2008", "REALIZADO AL 31/12/2009", "REALIZADO AL 31/12/2010", "REALIZADO AL 31/12/2011", "REALIZADO AL 31/12/2012", "REALIZADO AL 31/12/2013", "LOGRO %", "CRECIMIENTO A DICIEMBRE 2013"
+			"<html>RUBRO<br>&nbsp;", "<html>REALIZADO<br>AL 31/12/2008", "<html>REALIZADO<br>AL 31/12/2009", "<html>REALIZADO<br>AL 31/12/2010", "<html>REALIZADO<br>AL 31/12/2011", "<html>REALIZADO<br>AL 31/12/2012", "<html>REALIZADO<br>AL 31/12/2013", "<html>LOGRO<br>%", "<html>CRECIMIENTO A<br>DICIEMBRE 2013"
 		}
 	));
+	table.getColumnModel().getColumn(1).setPreferredWidth(89);
+	table.getColumnModel().getColumn(2).setPreferredWidth(89);
+	table.getColumnModel().getColumn(3).setPreferredWidth(89);
+	table.getColumnModel().getColumn(4).setPreferredWidth(89);
+	table.getColumnModel().getColumn(5).setPreferredWidth(89);
+	table.getColumnModel().getColumn(6).setPreferredWidth(89);
+	table.getColumnModel().getColumn(8).setPreferredWidth(106);
 	scrollPane.setViewportView(table);
 	
 	JButton btnGuardarAArchivo = new JButton("Guardar...");
@@ -130,12 +138,12 @@ public class ComparativoProyeccionAnual extends JFrame {
 	JButton button = new JButton("Filtrar");
 	button.setIcon(new ImageIcon(ComparativoProyeccionAnual.class.getResource("/recursos/filter.png")));
 	button.setFont(new Font("Times New Roman", Font.PLAIN, 11));
-	button.setBounds(403, 45, 95, 23);
+	button.setBounds(608, 45, 95, 23);
 	contentPane.add(button);
 	
 	JLabel label = new JLabel("");
 	label.setIcon(new ImageIcon(ComparativoProyeccionAnual.class.getResource("/recursos/aclogo_med_trans_64x67.png")));
-	label.setBounds(505, 0, 67, 67);
+	label.setBounds(704, 0, 67, 67);
 	contentPane.add(label);
 	
 	JButton button_1 = new JButton("Regresar");
@@ -153,5 +161,15 @@ public class ComparativoProyeccionAnual extends JFrame {
 	button_1.setIcon(new ImageIcon(ComparativoProyeccionAnual.class.getResource("/recursos/arrow_left.png")));
 	button_1.setBounds(23, 348, 141, 23);
 	contentPane.add(button_1);
+	
+	JScrollBar scrollBar = new JScrollBar();
+	scrollBar.setOrientation(JScrollBar.HORIZONTAL);
+	scrollBar.setBounds(10, 282, 744, 20);
+	contentPane.add(scrollBar);
+	
+	String [] nombres = {
+			"RUBRO", "<html>REALIZADO<br>AL 31/12/2008", "<html>REALIZADO<br>AL 31/12/2009", "<html>REALIZADO<br>AL 31/12/2010", "<html>REALIZADO<br>AL 31/12/2011", "<html>REALIZADO<br>AL 31/12/2012", "<html>REALIZADO<br>AL 31/12/2013", "<html>LOGRO<br>%", "<html>CRECIMIENTO A<br>DICIEMBRE 2013"
+	};
+	int[] anch = {};
 }
 }
